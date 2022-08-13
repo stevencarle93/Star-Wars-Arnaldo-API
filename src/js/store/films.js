@@ -3,8 +3,10 @@ export const filmStore={
     filmFavorite:[]
 }
 
-export const filmsActions={
-    loadFilmsList:()=>{
-        console.log("Carga de films")
+export function filmsActions(getStore, getActions, setStore){
+    return {
+        loadFilmsList:()=>{
+            console.log("Carga de films")
+        }
     }
 }

@@ -1,5 +1,8 @@
 import React from 'react'
+import CardComponent from './cardComponent'
 
 export default function ListVehicles(){
-    return (<h1>ListVehicles</h1>)
+
+    return (<CardComponent name="SOMBRA" marca="BMW" color="NEGRO"/>)
 }
+

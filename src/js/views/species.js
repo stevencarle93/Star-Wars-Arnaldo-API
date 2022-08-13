@@ -1,5 +1,10 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 
 export default function Species(){
-    return (<h1>Species</h1>)
+    return (
+    <div>
+        <h1>Species</h1>
+        <Outlet />
+    </div>)
 }

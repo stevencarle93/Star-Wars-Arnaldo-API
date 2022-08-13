@@ -18,7 +18,7 @@ export default function DetailFilms(){
 			else{
 				// Crear la lista con post
 				crearLista()
-			}
+			}	
 		})
 		.then(data=>setTask(data))
 		.catch(error=>console.error(error))

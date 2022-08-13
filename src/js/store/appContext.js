@@ -22,8 +22,7 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
-			
-			state.actions.fetchGetCharacter()
+			state.actions.loadSpecies()
 		}, []);
 
 		// The initial value for the context is not null anymore, but the current state of this component,

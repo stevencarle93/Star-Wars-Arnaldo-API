@@ -1,14 +1,17 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-import Planets from "./views/planets";
-import People from "./views/people";
-import Vehicles from "./views/vehicles";
+import Planets from "./views/planets/planets";
+import People from "./views/people/people";
+import ListVehicles from "./component/vehicles/listvehicles";
 import Species from "./views/species";
-import Starships from "./views/starships";
+import DetailsSpecies from "./views/species/detailsSpecies";
+import Starships from "./views/starships/starships";
 import Films from "./views/films/films";
+
+
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -25,18 +28,19 @@ const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
-					<Switch>
+					<Routes>
 						<Route exact path="/" component={Home} />
 						<Route exact path="/planets" component={Planets} />
 						<Route exact path="/people" component={People} />
-						<Route exact path="/species" component={Species} />
-						<Route exact path="/vehicles" component={Vehicles} />
+						<Route path="/species">
+							<Route default component={Species} />
+							<Route path=":speciesId" component={DetailsSpecies} />
+						</Route>
+						<Route exact path="/vehicles" component={ListVehicles} />
 						<Route exact path="/films" component={Films} />
 						<Route exact path="/starships" component={Starships} />
-						<Route>
-							<h1>Not found!</h1>
-						</Route>
-					</Switch>
+
+					</Routes>
 					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>

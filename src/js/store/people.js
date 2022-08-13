@@ -1,10 +1,18 @@
-export const filmStore={
-    films:[],
-    filmFavorite:[]
+export const peopleStore={
+    people:[],
+    peopleFavorite:[]
 }
 
-export const filmsActions={
-    loadFilmsList:()=>{
-        console.log("Carga de films")
+export function peopleActions(getStore, getActions, setStore){
+    return {
+    loadPeopleList: async() => {
+        let response = await fetch("https://www.swapi.tech/api/people")
+        if(results.ok) results = await response.json()
+        const store = getStore()
+        setStore({
+            ...store,
+            people: response
+        });
+        }
     }
 }
