@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function PreviewStarships(){
     return (
-        <div class="card" style="width: 18rem;">
+        <div className="card" style={{width: "18rem"}}>
             <img src="..." className="card-img-top"/>
             <div className="card-body">
                 <h5 className="card-title">Card title</h5>

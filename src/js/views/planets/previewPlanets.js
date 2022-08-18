@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function PreviewPlanets(){
     return (
-        <div class="card" style="width: 18rem;">
+        <div className="card" style={{width: "18rem"}}>
 
             
                     
