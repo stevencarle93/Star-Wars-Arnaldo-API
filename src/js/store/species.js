@@ -1,7 +1,5 @@
 export const speciesStore={
-    species:{
-        results:[]
-    }
+    species : []
 }
 
 export function speciesActions( getStore, getActions, setStore){
@@ -13,7 +11,7 @@ export function speciesActions( getStore, getActions, setStore){
             const store=getStore()
             setStore({
                 ...store,
-                species:results
+                species:results.results
             })
         }
     }
