@@ -8,11 +8,11 @@ export function planetsActions(getStore, getActions, setStore){
     return {
         loadPlanetsList: async()=>{
             let response = await fetch("https://www.swapi.tech/api/planets")
-            if(results.ok) results = await response.json()
+            if(response.ok) response = await response.json()
             const store=getStore()
             setStore({
                 ...store,
-                planets: response
+                planets: response.results
             });
         }
     }

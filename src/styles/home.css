@@ -5,3 +5,28 @@
 #footer{
     color:white;
 }
+
+#Planet_name{
+    color:white;
+}
+
+#People_name{
+    color:white;
+}
+
+#Film_title{
+    color:white;
+}
+
+#Specie_name{
+    color:white;
+}
+
+.card {
+    position: relative;
+    transition: transform 0.2s;
+}
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
