@@ -5,6 +5,8 @@ import ListSpecies from '../component/species/listSpecies'
 import ListFilms from '../component/films/listFilms'
 import ListPeople from '../component/people/listPeople'
 import ListPlanets from "../component/planets/listPlanets";
+import ListStarships from "../component/startships/listStartships";
+import ListVehicles from "../component/vehicles/listvehicles";
 
 export const Home = () => {
 	const {store, actions}=useContext(Context)
@@ -16,6 +18,8 @@ export const Home = () => {
 			<ListFilms />
 			<ListPeople />
 			<ListPlanets />
+			<ListStarships />
+			<ListVehicles />
 		</div>
 
 	)
