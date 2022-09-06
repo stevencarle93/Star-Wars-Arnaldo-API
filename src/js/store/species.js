@@ -1,5 +1,6 @@
 export const speciesStore={
-    species : []
+    species : [],
+    speciesFavorites : []
 }
 
 export function speciesActions( getStore, getActions, setStore){

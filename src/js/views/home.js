@@ -13,12 +13,17 @@ export const Home = () => {
 	
 	return (
 		<div className="text-center mt-5 bg-black">
-			<h1 id ="title">APP Star Wars</h1>
+			<h1 id ="title">SPECIES</h1>
 			<ListSpecies />
+			<h1 id ="title">FILMS</h1>
 			<ListFilms />
+			<h1 id ="title">PEOPLE</h1>
 			<ListPeople />
+			<h1 id ="title">PLANETS</h1>
 			<ListPlanets />
+			<h1 id ="title">STARSHIPS</h1>
 			<ListStarships />
+			<h1 id ="title">VEHICLES</h1>
 			<ListVehicles />
 		</div>
 

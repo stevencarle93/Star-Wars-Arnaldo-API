@@ -6,7 +6,9 @@ import People from "./views/people/people";
 import ListVehicles from "./component/vehicles/listvehicles";
 import Species from "./views/species";
 import DetailsSpecies from "./views/species/detailsSpecies";
+import DetailsPlanets from "./views/planets/detailsPlanets";
 import ViewSpecies from "./views/species/viewSpecies";
+import ViewPlanets from "./views/planets/viewPlanets";
 import Starships from "./views/starships/starships";
 import Films from "./views/films/films";
 import Layout from "./layout";
@@ -25,7 +27,10 @@ const AppRoutes = () => {
 					<Routes>
                         <Route path="/" element={<Layout />}>
                             <Route index element={<Home />} />
-                            <Route  path="planets" element={<Planets />} />
+                            <Route  path="planets" element={<Planets />}>
+                                <Route default element={<ViewPlanets />} />
+                                <Route path=":planetsId" element={<DetailsPlanets />} />
+                            </Route>                               
                             <Route  path="people" element={<People />} />
                             <Route path="species" element={<Species />}>
                                 <Route default element={<ViewSpecies />} />

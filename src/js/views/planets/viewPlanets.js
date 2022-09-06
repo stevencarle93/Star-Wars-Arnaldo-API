@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function PreviewPlanets(){
+export default function ViewPlanets(){
     return (
         <div className="card" style={{width: "18rem"}}>
 
