@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
+import { Outlet } from "react-router-dom";
 
-export default function Vehicles(){
-    return (<h1>Vehicles</h1>)
+export default function Vehicles() {
+  return (
+    <div>
+      <h1>Vehicles</h1>
+      <Outlet />
+    </div>
+  );
 }
 /*
 import React from "react";

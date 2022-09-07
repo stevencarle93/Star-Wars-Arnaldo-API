@@ -22,7 +22,7 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
-			state.actions.loadSpecies()
+			state.actions.loadSpeciesList()
 			state.actions.loadFilmsList()
 			state.actions.loadPeopleList()
 			state.actions.loadPlanetsList()

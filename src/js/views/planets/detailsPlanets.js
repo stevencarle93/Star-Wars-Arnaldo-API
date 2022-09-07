@@ -1,17 +1,19 @@
-import { resolveConfig } from 'prettier';
-import React, {useContext, useEffect, useState} from 'react'
-import { useParams } from 'react-router-dom'
-import { Context } from '../../store/appContext';
+import { resolveConfig } from "prettier";
+import React, { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Context } from "../../store/appContext";
 
-export default function DetailsPlanets(){
-    const {store, actions} = useContext(Context)
-    const params = useParams()
-    useEffect(async()=>{
-        await actions.loadPlanetsDetails(params.planetsId)
-    },[])
-    const {planet} = store
+export default function DetailsPlanets() {
+  const { store, actions } = useContext(Context);
+  const params = useParams();
+  useEffect(async () => {
+    await actions.loadPlanetsDetails(params.planetsId);
+  }, []);
+  const { planet } = store;
+  return <>{planet ? <p>{planet.properties.name}</p> : ""}</>;
+}
 
-    /*useEffect(async () => {
+/*useEffect(async () => {
         // Your code here
         fetch ("https://www.swapi.tech/api/planets/"+ params.planetsId).then(
             resp => resp.ok ? resp.json():null
@@ -23,7 +25,7 @@ export default function DetailsPlanets(){
             error => console.error(error)
         )
       }, []);*/
-      /*const loadPlanetsDetails=()=>{
+/*const loadPlanetsDetails=()=>{
         let response = fetch("https://www.swapi.tech/api/planets/"+ params.planetsId)
         if(response.ok) response = response.json()
         console.log(response)
@@ -31,7 +33,3 @@ export default function DetailsPlanets(){
              response.results
         )
     }*/
-    return(<>
-        {planet?(<p>{planet.properties.name}</p>):""}
-    </>)
-}

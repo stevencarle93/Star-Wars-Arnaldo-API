@@ -1,8 +1,17 @@
-import React from 'react'
+import { resolveConfig } from 'prettier';
+import React, {useContext, useEffect, useState} from 'react'
+import { useParams } from 'react-router-dom'
+import { Context } from '../../store/appContext';
 
-export default function DetailFilms(){
-    return (<h1>DetailFilms</h1>)
-}
+export default function DetailsPeople(){
+    const {store, actions} = useContext(Context)
+    const params = useParams()
+    useEffect(async()=>{
+        await actions.loadPeopleDetails(params.peopleId)
+    },[])
+	const { person } = store;
+	return <>{person ? <p>{person.properties.name}</p> : ""}</>;
+  }
 
 /*export default function Form() {
 

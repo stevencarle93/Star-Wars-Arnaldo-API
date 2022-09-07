@@ -6,7 +6,7 @@ import ListFilms from '../component/films/listFilms'
 import ListPeople from '../component/people/listPeople'
 import ListPlanets from "../component/planets/listPlanets";
 import ListStarships from "../component/startships/listStartships";
-import ListVehicles from "../component/vehicles/listvehicles";
+import ListVehicles from "../component/vehicles/listVehicles";
 
 export const Home = () => {
 	const {store, actions}=useContext(Context)

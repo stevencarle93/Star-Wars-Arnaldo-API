@@ -3,13 +3,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../../store/appContext";
 
-export default function DetailsSpecies() {
+export default function DetailsVehicles() {
   const { store, actions } = useContext(Context);
   const params = useParams();
   useEffect(async () => {
-    await actions.loadSpeciesDetails(params.speciesId);
+    await actions.loadVehiclesDetails(params.vehiclesId);
   }, []);
-  const { specie } = store;
-  console.log(params);
-  return <>{specie ? <p>{specie.properties.name}</p> : ""}</>;
+  const { vehicle } = store;
+  return <>{vehicle ? <p>{vehicle.properties.name}</p> : ""}</>;
 }

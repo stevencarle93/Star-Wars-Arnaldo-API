@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function PreviewStarships(){
+export default function ViewStarships(){
     return (
         <div className="card" style={{width: "18rem"}}>
             <img src="..." className="card-img-top"/>

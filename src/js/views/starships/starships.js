@@ -1,8 +1,11 @@
-import React from 'react'
+import React from "react";
+import { Outlet } from "react-router-dom";
 
-
-export default function Starships(){
-    return (  <div>
-        <h1>Preview Starship</h1>
-    </div>)
+export default function Starships() {
+  return (
+    <div>
+      <h1>Starships</h1>
+      <Outlet />
+    </div>
+  );
 }

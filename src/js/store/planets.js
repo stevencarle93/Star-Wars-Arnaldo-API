@@ -12,7 +12,7 @@ export function planetsActions(getStore, getActions, setStore) {
         const store = getStore();
         setStore({
           ...store,
-          planets: response.results
+          planets: response.results,
         });
       } catch (error) {
         console.error(error);
@@ -23,11 +23,11 @@ export function planetsActions(getStore, getActions, setStore) {
         let response = await fetch(`https://www.swapi.tech/api/planets/${uid}`);
         if (response.ok) response = await response.json();
         else return;
-        console.log(response.result)
+        console.log(response.result);
         const store = getStore();
         setStore({
           ...store,
-          planet: response.result
+          planet: response.result,
         });
       } catch (error) {
         console.error(error);
