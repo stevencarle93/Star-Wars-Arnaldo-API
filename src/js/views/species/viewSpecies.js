@@ -1,7 +1,11 @@
 import React from 'react'
+import ListSpecies from '../../component/species/listSpecies'
 
 export default function ViewSpecies(){
     return (
-        <h1>View Species</h1>
+        <div>
+            <h1>View Species</h1>
+            <ListSpecies />
+        </div>
     )
 }
