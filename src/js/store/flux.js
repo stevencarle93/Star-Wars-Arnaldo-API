@@ -4,6 +4,7 @@ import { peopleActions, peopleStore } from './people'
 import { planetStore, planetsActions } from './planets'
 import { starshipsStore, starshipsActions } from './starships'
 import { vehiclesStore, vehiclesActions } from './vehicles'
+import { favoritosActions, favoritosStore } from './favoritos';
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -16,7 +17,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			...speciesStore,
 			...planetStore,
 			...starshipsStore,
-			...vehiclesStore
+			...vehiclesStore,
+			...favoritosStore
 		},
 		actions: {
 			/*
@@ -34,7 +36,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			...peopleActions(getStore, getActions, setStore),
 			...starshipsActions(getStore, getActions, setStore),
 			...planetsActions(getStore, getActions, setStore),
-			...vehiclesActions(getStore, getActions, setStore)
+			...vehiclesActions(getStore, getActions, setStore),
+			...favoritosActions(getStore, getActions, setStore)
 		}
 	};
 };

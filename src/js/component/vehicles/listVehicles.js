@@ -1,14 +1,21 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../../store/appContext";
 
 
 export default function ListVehicles() {
   const { store, actions } = useContext(Context);
-
+  const navigate = useNavigate()
+	const URL = 'https://www.swapi.tech/api'
   return (
     <ul className="list-group list-group-horizontal overflow-auto mb-5">
       {store.vehicles.map((vehicles, index) => {
+                let itsFavorite = store.favoritos.some(
+                  (val) =>
+                    val.ident ==
+                    vehicles.url.substr(URL.length).replace(vehicles.uid, "") +
+                      vehicles.uid
+                );
         return (
           <li key={index} className="list-group-item bg-black">
             <div className="card bg-black" style={{ width: "18rem" }}>
@@ -25,9 +32,9 @@ export default function ListVehicles() {
                   Details
                 </Link>
                 <p>   </p>
-                <div className="btn btn-primary">
-                  Save
-                </div>
+                <button onClick = {() => actions.addFavorites(item.url.substr(URL.length).replace(item.uid,""), item)} className = "border-0 bg-transparent fs-3 text-warning p-0"> 
+										<i className = {`${itsFavorite? "fa-solid":"fa-regular"} fa-bookmark`}/>
+									</button>
               </div>
             </div>
           </li>
