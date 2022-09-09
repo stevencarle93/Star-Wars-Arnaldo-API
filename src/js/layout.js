@@ -25,6 +25,7 @@ const Layout = () => {
           height="90"
         ></img>
       </Link>
+      <Navbar />
       <Outlet />
       <Footer />
     </div>
