@@ -24,6 +24,10 @@ export default function ListVehicles() {
                 <Link to={`/vehicles/${vehicles.uid}`} className="btn btn-primary">
                   Details
                 </Link>
+                <p>   </p>
+                <div className="btn btn-primary">
+                  Save
+                </div>
               </div>
             </div>
           </li>

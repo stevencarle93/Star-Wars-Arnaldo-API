@@ -22,6 +22,10 @@ export default function ListSpecies() {
                 <Link to={`/species/${specie.uid}`} className="btn btn-primary">
                   Details
                 </Link>
+                <p>   </p>
+                <div className="btn btn-primary">
+                  Save
+                </div>
               </div>
             </div>
           </li>

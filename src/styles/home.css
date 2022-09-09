@@ -30,6 +30,10 @@
     color:white;
 }
 
+#View_Title{
+    color:white;
+}
+
 .card {
     position: relative;
     transition: transform 0.2s;
