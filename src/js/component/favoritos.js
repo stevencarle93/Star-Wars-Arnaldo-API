@@ -11,7 +11,7 @@ export default function Favoritos() {
 			{store.favoritos? (
 				<div className="dropdown">
 					<button className={`btn btn-secondary dropdown-toggle ${styles.FavMenu}`} type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-						Favoritos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{store.favoritos.length}
+						Favorites&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{store.favoritos.length}
 					</button>
 					<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu2">
 							{store.favoritos.length!=0? store.favoritos.map((favorito,index)=>{
@@ -26,7 +26,7 @@ export default function Favoritos() {
 									</li>
 								)
 							}):
-								<div className="text-center">Vacio</div>
+								<div className="text-center">Empty</div>
 							}
 					</ul>
 			</div>
