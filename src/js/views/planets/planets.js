@@ -22,8 +22,10 @@ export default function Planets(){
             <div>
               <img
                 src={planet ? `https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg` : ""}
+                onError={(e)=>{e.target.onerror = null; e.target.src=`https://starwars-visualguide.com/assets/img/placeholder.jpg`}}
                 width="250"
-                height="300"></img>
+                height="300"
+                />
             </div>
           </li>
             <li className="list-group-item">

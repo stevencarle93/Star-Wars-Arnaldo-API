@@ -26,6 +26,7 @@ export default function Starships() {
                     ? `https://starwars-visualguide.com/assets/img/starships/${starship.uid}.jpg`
                     : ""
                 }
+                onError={(e)=>{e.target.onerror = null; e.target.src=`https://starwars-visualguide.com/assets/img/placeholder.jpg`}}
                 width="250"
                 height="300"
               ></img>
