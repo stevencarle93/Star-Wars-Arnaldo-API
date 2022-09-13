@@ -4,17 +4,12 @@ import { Context } from "../../store/appContext";
 
 export default function ListStarships() {
   const { store, actions } = useContext(Context);
-  const navigate = useNavigate();
-  const URL = "https://www.swapi.tech/api";
+  const addFavorites = (item) => {
+    actions.addFavorites({id:item.id, name:item.name, type:"starships"})
+}
   return (
     <ul className="list-group list-group-horizontal overflow-auto mb-5">
       {store.starships.map((starships, index) => {
-        let itsFavorite = store.favoritos.some(
-          (val) =>
-            val.ident ==
-            starships.url.substr(URL.length).replace(starships.uid, "") +
-              starships.uid
-        );
         return (
           <li key={index} className="list-group-item bg-black">
             <div className="card bg-black" style={{ width: "18rem" }}>
@@ -35,22 +30,7 @@ export default function ListStarships() {
                 >
                   Details
                 </Link>
-                <p> </p>
-                <button
-                  onClick={() =>
-                    actions.addFavorites(
-                      starships.url.substr(URL.length).replace(starships.uid, ""),
-                      starships
-                    )
-                  }
-                  className="border-0 bg-transparent fs-3 text-warning p-0"
-                >
-                  <i
-                    className={`${
-                      itsFavorite ? "fa-solid" : "fa-regular"
-                    } fa-bookmark`}
-                  />
-                </button>
+                <button type='button' className='btn btn-warning mx-4' onClick={()=>addFavorites(starships)}>❤</button>
               </div>
             </div>
           </li>

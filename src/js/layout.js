@@ -2,7 +2,6 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { Link } from "react-router-dom";
 
 //create your first component
 const Layout = () => {
@@ -18,13 +17,6 @@ const Layout = () => {
 </Link>*/
   return (
     <div>
-      <Link to={"/"} className="">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1041px-Star_Wars_Logo.svg.png"
-          width="150"
-          height="90"
-        ></img>
-      </Link>
       <Navbar />
       <Outlet />
       <Footer />

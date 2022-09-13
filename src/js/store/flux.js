@@ -4,7 +4,6 @@ import { peopleActions, peopleStore } from './people'
 import { planetStore, planetsActions } from './planets'
 import { starshipsStore, starshipsActions } from './starships'
 import { vehiclesStore, vehiclesActions } from './vehicles'
-import { favoritosActions, favoritosStore } from './favoritos';
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -18,7 +17,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			...planetStore,
 			...starshipsStore,
 			...vehiclesStore,
-			...favoritosStore
+
+			favorites:[]
 		},
 		actions: {
 			/*
@@ -37,7 +37,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			...starshipsActions(getStore, getActions, setStore),
 			...planetsActions(getStore, getActions, setStore),
 			...vehiclesActions(getStore, getActions, setStore),
-			...favoritosActions(getStore, getActions, setStore)
+			addFavorites: (item) => {
+				const store = getStore();
+				let favorites = [ ...store.favorites, item ]
+				setStore( {...store, favorites} )
+			},
+			removeFavorites: (index) => {
+				const store = getStore();
+				let favorites = [...store.favorites ]
+				favorites.splice(index,1)
+				setStore( {...store, favorites} )
+			}
 		}
 	};
 };
